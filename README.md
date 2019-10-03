@@ -7,6 +7,12 @@
 
 <img align="right" src="https://github.com/Errrneist/AIARG-UWKWT-Calibration-Driver/blob/master/IMG/UW-AA.jpg" alt="University of Washington" width="350">
 
+# Resources
+
+* [1] [LabVIEW LINX and Installation](https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z0000019TmpSAE&l=en-US)
+
+  
+
 ## Contributor
 
 **Principal Investigator**
