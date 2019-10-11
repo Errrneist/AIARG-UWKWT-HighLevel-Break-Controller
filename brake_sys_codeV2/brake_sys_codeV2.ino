@@ -300,6 +300,5 @@ void loop() { // ************************************************************** 
   if (inputString !="") {Serial.println("BAD COMMAND="+inputString);}// Serial.print("\n"); }// "\t" tab      
   inputString = ""; stringComplete = false; // clear the string:
  }
- 
 
 }

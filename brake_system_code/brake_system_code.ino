@@ -22,8 +22,6 @@ boolean        ComData = false;    // whether com data is on when motors are mov
 # define X_DIR_5v 5 //DIR+(+5v) axis stepper motor direction control  
 # define X_STPgnd 6 //PUL-(PUL) axis stepper motor step control       
 # define X_STP_5v 7 //PUL+(+5v) axis stepper motor step control       
-# define limitPin1 8 //limit switch 1 next to master cylinder
-# define limitPin2 9 //limit switch 2 next to linear actuator
 
 void setup() {// *************************************************************     setup
 pinMode (X_ENgnd ,OUTPUT); //ENA-(ENA)
@@ -32,8 +30,6 @@ pinMode (X_DIRgnd,OUTPUT); //DIR-(DIR)
 pinMode (X_DIR_5v,OUTPUT); //DIR+(+5v)
 pinMode (X_STPgnd,OUTPUT); //PUL-(PUL)
 pinMode (X_STP_5v,OUTPUT); //PUL+(+5v)
-pinMode (limitPin1,INPUT_PULLUP);  //limit switch
-pinMode (limitPin2,INPUT_PULLUP);
 pinMode (13,OUTPUT);
 digitalWrite (X_ENgnd,  LOW); //ENA-(ENA)
 digitalWrite (X_EN_5v, LOW); //ENA+(+5V) low=enabled
@@ -113,52 +109,9 @@ if (NX>X)
 {xt=NX-X; digitalWrite (X_DIR_5v,HIGH);xt=1;}
 else
 {xt=X-NX; digitalWrite (X_DIR_5v,LOW);xt=-1;}
-if (ComData==true)
-{for (; X !=NX; X=X+xt)
-{    if(digitalRead(X_DIR_5v)==HIGH && digitalRead(limitPin1)==LOW) { //compression
-      rotate2();
-    }
-    else if(digitalRead(X_DIR_5v)==LOW && digitalRead(limitPin2)==LOW) {//retract
-      rotate2();
-      N++;
-    }
-    else if(digitalRead(X_DIR_5v)==HIGH && digitalRead(limitPin1)==HIGH) {//switch1
-      break;
-    }
-    else if(digitalRead(X_DIR_5v)==LOW && digitalRead(limitPin1)==HIGH) {//switch2
-      break;
-    }
-}}
-else
-{ 
-  for (; X !=NX ; X=X+xt){
-    if(digitalRead(X_DIR_5v)==HIGH && digitalRead(limitPin1)==LOW) { //compression
-      rotate();
-    }
-    else if(digitalRead(X_DIR_5v)==LOW && digitalRead(limitPin2)==LOW) {//retract
-      rotate();
-      N++;
-    }
-    else if(digitalRead(X_DIR_5v)==HIGH && digitalRead(limitPin1)==HIGH) {//switch1
-      break;
-    }
-    else if(digitalRead(X_DIR_5v)==LOW && digitalRead(limitPin1)==HIGH) {//switch2
-      break;
-    }
-   
- }
-}
-if(digitalRead(X_DIR_5v)==LOW && digitalRead(limitPin2)==HIGH) {
-  Serial.print("X=");
-  Serial.println(derp-N);
-}
-else {
-  
 Serial.print("X=");
 Serial.println(X);
-}
 //X=NX;
-
 inputString="";
 }
 
@@ -302,4 +255,3 @@ void loop() { // ************************************************************** 
  }
 
 }
-
