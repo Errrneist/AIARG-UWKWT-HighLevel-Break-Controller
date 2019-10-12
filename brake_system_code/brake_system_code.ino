@@ -36,7 +36,7 @@ digitalWrite (X_EN_5v, LOW); //ENA+(+5V) low=enabled
 digitalWrite (X_DIRgnd, LOW); //DIR-(DIR)
 digitalWrite (X_DIR_5v, LOW); //DIR+(+5v)
 digitalWrite (X_STPgnd, LOW); //PUL-(PUL)
-digitalWrite (X_STP_5v, LOW); //PUL+(+5v)
+digitalWrite (X_STP_5v, HIGH); //PUL+(+5v)
 
 Serial.begin(115200);
 }
