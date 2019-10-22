@@ -11,6 +11,12 @@
 
 * [1] [LabVIEW LINX and Installation](https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z0000019TmpSAE&l=en-US)
 
+* [2] [LabVIEW to Arduino?](https://forum.digilentinc.com/topic/9493-labview-to-arduino-linx-but-for-steppers-nope/)
+
+* [3] [How to add custom command to LINX](https://www.labviewmakerhub.com/doku.php?id=learn:tutorials:libraries:linx:misc:adding_custom_command&_ga=2.136293814.6266417.1571639050-342743149.1571639050)
+
+* [4] [Custom Command Example](https://www.labviewmakerhub.com/doku.php?id=learn:tutorials:libraries:linx:misc:custom_command_example&_ga=2.136293814.6266417.1571639050-342743149.1571639050)
+
   
 
 ## Contributor
@@ -29,7 +35,7 @@
 
 **Lab Manager**
 
-* *Kevin Ho*
+* *[Kevin Ho](https://www.linkedin.com/in/kevin-ho-b59328138)*
 
 
 ## License
